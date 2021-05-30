@@ -32,7 +32,7 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.''',
 
-'''petr David, ADAM 10 Martina, ANNIE bela.'''
+'''petr David, ADAM 10 Martina, ANNIE bela. Pepa'''
 ]
 
 USERS = {
