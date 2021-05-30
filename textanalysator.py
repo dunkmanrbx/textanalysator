@@ -32,7 +32,21 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.''',
 
-'''petr David, ADAM 10 Martina, ANNIE bela. Pepa'''
+'''Během pandemického období mnozí zaměstnanci amerických poboček kávového řetězce Starbucks přiznali, že čelí velkému pracovnímu tlaku i agresivním zákazníkům. 
+Někteří si stěžují, že na pobočkách chybějí zaměstnanci a oni tak často musí pracovat přesčas. Jejich mzda ovšem zůstává pořád stejná.''',
+
+'''V roce 2020 rozšířil kavárenský řetězec své služby a začal spolupracovat s rozvážkovou společností Uber Eats, která doručuje sortiment až k zákazníkovi. 
+Procento tržeb společnosti Starbucks prostřednictvím mobilních objednávek za posledních několik let významně vzrostlo, 
+z deseti procent veškerého prodeje na konci roku 2017 na 24 procent na konci roku 2020.''',
+
+'''Delfín obecný je velmi aktivní a společenský, žije ve společenství o deseti až několika tisících jedincích. 
+Upřednostňuje hluboké vody v pobřežních oblastech, často se za účelem lovu kořisti sdružuje mnoho skupin dohromady a jindy spolu různé skupiny soupeří. 
+Ke spánku využívá jen polovinu mozku, druhou hemisférou je bdělý, přičemž obě poloviny může střídat. 
+Plave maximální rychlostí přinejmenším 40 km/h (a možná až 60 km/h) s maximální hloubkou ponoru 300 metrů. Má silnou ocasní ploutev, 
+ta mu umožňuje dlouhé skoky nad hladinu i poskakování ve vzpřímeném postoji za pomoci rychlých úderů o hladinu. Profil kůže mu ale k plavání nepomáhá. 
+Pod vodou je schopen zůstat až 10 minut na jedno nadechnutí, ale většinou se vynořuje častěji. Domlouvá se pomocí echolokace na frekvencích 1000 Hz–150 kHz.
+ Březost trvá 10–11,5 měsíce, období rozmnožování je jaro a podzim, v tropickém pásmu celoročně. Samice rodí jedno mládě. 
+ Mláďata se rodí ocasem napřed a dosahují délky 0.8–1 m a hmotnosti přibližně 10 kg. Delfíni se dožívají až 30 let.'''
 ]
 
 USERS = {
