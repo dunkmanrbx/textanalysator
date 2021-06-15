@@ -114,7 +114,7 @@ l_digit = [f for f in workingList if f.isdigit()]
 statistic = dict()
 
 for word in workingList:
-    statistic[len(word)] = 1 if len(word) not in statistic else statistic[len(word)] + 1
+    statistic[len(word)] = statistic.get(len(word), 0) + 1
 
 # -----------------------------------------------------------------------------
 # VÝSLEDNÝ REPORT
