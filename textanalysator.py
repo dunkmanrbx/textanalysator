@@ -1,3 +1,5 @@
+from prettytable import PrettyTable
+
 # -----------------------------------------------------------------------------
 # VSTUPNÍ DATA
 # - Pole s texty k analýze
@@ -32,21 +34,40 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.''',
 
-'''Během pandemického období mnozí zaměstnanci amerických poboček kávového řetězce Starbucks přiznali, že čelí velkému pracovnímu tlaku i agresivním zákazníkům. 
-Někteří si stěžují, že na pobočkách chybějí zaměstnanci a oni tak často musí pracovat přesčas. Jejich mzda ovšem zůstává pořád stejná.''',
+'''Během pandemického období mnozí zaměstnanci amerických 
+poboček kávového řetězce Starbucks přiznali, že čelí velkému 
+pracovnímu tlaku i agresivním zákazníkům. 
+Někteří si stěžují, že na pobočkách chybějí zaměstnanci a oni 
+tak často musí pracovat přesčas. Jejich mzda ovšem zůstává
+pořád stejná.''',
 
-'''V roce 2020 rozšířil kavárenský řetězec své služby a začal spolupracovat s rozvážkovou společností Uber Eats, která doručuje sortiment až k zákazníkovi. 
-Procento tržeb společnosti Starbucks prostřednictvím mobilních objednávek za posledních několik let významně vzrostlo, 
-z deseti procent veškerého prodeje na konci roku 2017 na 24 procent na konci roku 2020.''',
+'''V roce 2020 rozšířil kavárenský řetězec své služby a začal 
+spolupracovat s rozvážkovou společností Uber Eats, která doručuje 
+sortiment až k zákazníkovi. Procento tržeb společnosti Starbucks 
+prostřednictvím mobilních objednávek za posledních několik let 
+významně vzrostlo, z deseti procent veškerého prodeje na 
+konci roku 2017 na 24 procent na konci roku 2020.''',
 
-'''Delfín obecný je velmi aktivní a společenský, žije ve společenství o deseti až několika tisících jedincích. 
-Upřednostňuje hluboké vody v pobřežních oblastech, často se za účelem lovu kořisti sdružuje mnoho skupin dohromady a jindy spolu různé skupiny soupeří. 
-Ke spánku využívá jen polovinu mozku, druhou hemisférou je bdělý, přičemž obě poloviny může střídat. 
-Plave maximální rychlostí přinejmenším 40 km/h (a možná až 60 km/h) s maximální hloubkou ponoru 300 metrů. Má silnou ocasní ploutev, 
-ta mu umožňuje dlouhé skoky nad hladinu i poskakování ve vzpřímeném postoji za pomoci rychlých úderů o hladinu. Profil kůže mu ale k plavání nepomáhá. 
-Pod vodou je schopen zůstat až 10 minut na jedno nadechnutí, ale většinou se vynořuje častěji. Domlouvá se pomocí echolokace na frekvencích 1000 Hz–150 kHz.
- Březost trvá 10–11,5 měsíce, období rozmnožování je jaro a podzim, v tropickém pásmu celoročně. Samice rodí jedno mládě. 
- Mláďata se rodí ocasem napřed a dosahují délky 0.8–1 m a hmotnosti přibližně 10 kg. Delfíni se dožívají až 30 let.'''
+'''Delfín obecný je velmi aktivní a společenský, žije 
+ve společenství o deseti až několika tisících jedincích. 
+Upřednostňuje hluboké vody v pobřežních oblastech, často se 
+za účelem lovu kořisti sdružuje mnoho skupin dohromady 
+a jindy spolu různé skupiny soupeří. 
+Ke spánku využívá jen polovinu mozku, druhou hemisférou 
+je bdělý, přičemž obě poloviny může střídat. 
+Plave maximální rychlostí přinejmenším 40 km/h 
+(a možná až 60 km/h) s maximální hloubkou ponoru 300 metrů. 
+Má silnou ocasní ploutev, ta mu umožňuje dlouhé skoky nad 
+hladinu i poskakování ve vzpřímeném postoji za pomoci 
+rychlých úderů o hladinu. Profil kůže mu ale k plavání nepomáhá. 
+Pod vodou je schopen zůstat až 10 minut na jedno nadechnutí, 
+ale většinou se vynořuje častěji. Domlouvá se pomocí 
+echolokace na frekvencích 1000 Hz–150 kHz. Březost trvá 
+10–11,5 měsíce, období rozmnožování je jaro a podzim, 
+v tropickém pásmu celoročně. Samice rodí jedno mládě. 
+Mláďata se rodí ocasem napřed a dosahují délky 
+0.8–1 m a hmotnosti přibližně 10 kg. 
+Delfíni se dožívají až 30 let.'''
 ]
 
 USERS = {
@@ -77,7 +98,7 @@ print(f'We have {numOfTexts} texts to be analyzed.')
 print(DELIMINER)
 
 option = input(f'\nEnter a number between 1 and {numOfTexts} to select: ')
-isOK = option.isdigit() and int(option) in range(1, numOfTexts+1) # range je bez posledniho prvku, takze +1
+isOK = option.isdigit() and int(option) in range(1, numOfTexts+1)
 if not isOK:
     print(f'Your option {option} is not allowed. Exiting ...')
     exit()
@@ -126,30 +147,22 @@ for word in workingList:
 #
 # Jelikož je slovník neseřazená kolekce, je třeba ještě použit funkci sorted()
 # -----------------------------------------------------------------------------
-midColLength = max(statistic.values()) + 3
-maxKeyLength = len(str(max(statistic.keys())))
-header = f'LEN| OCCURENCE{" "*(midColLength-len("OCCURENCE"))}| NR.'
-
 print(f'\nThere are {len(workingList)} words in the selected text.')
 print(f'There are {len(l_title)} titlecase words.')
 print(f'There are {len(l_upper)} uppercase words.')
 print(f'There are {len(l_lower)} lowercase words.')
 print(f'There are {len(l_digit)} numeric strings.')
 print(f'The sum of all the numbers {sum([int(i) for i in l_digit])}.\n')
-print('-' * len(header))
-print(header)
-print('-' * len(header))
+
+table = PrettyTable()
+table.field_names = ['LEN', 'OCCURENCE', 'NR.']
+table.align = 'r'
+table.align['OCCURENCE'] = 'l'
 
 for foo in sorted(statistic.items()):
-    print(
-        f'{" "*(maxKeyLength-len(str(foo[0])))}'
-        f'{foo[0]} '
-        f'| {"*"*foo[1]}'
-        f'{" "*(midColLength-foo[1])}'
-        f'| {foo[1]}'
-    )
+    table.add_row([foo[0], '*'*foo[1], foo[1]])
 
-print('-' * len(header))
+print(table)
 
 # -----------------------------------------------------------------------------
 # Příklad výstupu
@@ -170,17 +183,17 @@ print('-' * len(header))
 # There are 1 numeric strings.
 # The sum of all the numbers 300.
 #
-# ------------------------------
-# LEN| OCCURENCE           | NR.
-# ------------------------------
-#  2 | *******             | 7
-#  3 | *****************   | 17
-#  4 | *********           | 9
-#  5 | **********          | 10
-#  6 | *******             | 7
-#  7 | ***                 | 3
-#  8 | **                  | 2
-#  9 | *****               | 5
-# 10 | *                   | 1
-# 13 | *                   | 1
-# ------------------------------
+# +-----+-------------------+-----+
+# | LEN | OCCURENCE         | NR. |
+# +-----+-------------------+-----+
+# |   2 | *******           |   7 |
+# |   3 | ***************** |  17 |
+# |   4 | *********         |   9 |
+# |   5 | **********        |  10 |
+# |   6 | *******           |   7 |
+# |   7 | ***               |   3 |
+# |   8 | **                |   2 |
+# |   9 | *****             |   5 |
+# |  10 | *                 |   1 |
+# |  13 | *                 |   1 |
+# +-----+-------------------+-----+
